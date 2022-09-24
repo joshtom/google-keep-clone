@@ -1,11 +1,11 @@
 // Import Main css here
-import "./styles/main.scss";
+import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1> Google Keep Clone. </h1>
+        <Sidebar />
       </header>
     </div>
   );
