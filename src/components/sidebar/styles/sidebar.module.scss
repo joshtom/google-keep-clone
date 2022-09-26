@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -25,17 +26,18 @@
   //color: blue;
   justify-content: center;
   align-items: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Roboto Slab", serif;
 }
 
-.sidebarlist .row:hover{
-cursor: pointer;
-background-color: bisque;
+.sidebarlist .row:hover {
+  cursor: pointer;
+  background-color: rgb(250, 232, 200);;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
-.sidebarlist #active{
-    background-color: orange;
+.sidebarlist #active {
+  background-color: orange;
 }
 
 .row #icon {
