@@ -64,14 +64,12 @@ const Card = () => {
     <div className={styles.input_card}>
       <form className={styles.card}>
         {editFormIsOpen ? editForm : ""}
-
         <div className={styles.input_div2}>
           <input
             onClick={() => setEditFormIsOpen(true)}
             type="text"
             placeholder="Take a note..."
           />
-
           <div className={styles.icons}>
             <MdOutlineCheckBox className={styles.icon} />
 

@@ -143,12 +143,17 @@
 
     ul {
         width: 100%;
-        padding: 5px 10px;
+        padding: 5px 0px;
 
         li {
             $fontFamily: 'Roboto', sans-serif;
             list-style-type: none;
-            padding: 10px 0px;
+            padding: 10px;
+
+            &:hover {
+                border: none;
+                background-color: $searchBarColor;
+            }
         }
     }
 }
