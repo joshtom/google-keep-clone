@@ -1,14 +1,13 @@
-// Import Main css here
-import "./styles/main.scss";
+import Navbar from './components/navbar/Navbar';
+import Card from './components/card/Card';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1> Google Keep Clone. </h1>
-      </header>
+    <div className="navbar">
+      <Navbar />
+      <Card />
     </div>
-  );
+  )
 }
 
 export default App;

@@ -1,0 +1,161 @@
+@import "../../styles/variables.scss";
+
+.header {
+    height: 60px;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: $backgroundColor;
+    color: $textColor;
+    width: 100%;
+    @include flexCenter(row);
+    justify-content: space-between;
+    border-bottom: 1px groove $searchBarColor;
+    font-size: $fontSizeSm;
+
+    &__content {
+        @include flexCenter(row);
+        justify-content: flex-start;
+        width: 15rem;
+        color: $iconColor;
+
+        &_menu {
+            width: 20px;
+            @include flexCenter(row);
+            cursor: pointer;
+        }
+
+        &_logo {
+            @include flexCenter(row);
+            font-family: $fontFamily;
+            font-weight: 400;
+            cursor: pointer;
+
+            img {
+                width: 35%;
+            }
+
+            p {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &__icons {
+        color: $iconColor;
+        @include flexCenter(row);
+        justify-content: space-between;
+        width: 55%;
+        width: 15rem;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &_search {
+            width: 20%;
+
+            &X {
+                display: none;
+            }
+
+            input {
+                display: none;
+            }
+        }
+
+        &_set1 {
+            width: 70%;
+            @include flexCenter(row);
+            justify-content: space-around;
+        }
+
+        &_set2 {
+            width: 60%;
+            @include flexCenter(row);
+            justify-content: space-around;
+        }
+
+        &1 {
+            margin-right: 5px;
+            @include flexCenter(row);
+        }
+
+        &3 {
+            display: none;
+        }
+    }
+}
+
+/***************media queries****************/ 
+
+@media (min-width: $md) {
+    .header {
+        font-size: $fontSizeLg;
+
+        &__icons {
+            &1 {
+                margin-right: 0px;
+            }
+
+            &3 {
+                display: block;
+            }
+
+            &_set2 {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .header {
+        padding: 0px 20px; 
+
+        &__content {
+            width: 25rem;
+        }
+
+        &__icons_search {
+
+            input {
+                width: 50%;
+                position: fixed;
+                display: block;
+                transition: 3s ease-in-out;
+                border: none;
+                background-color: $searchBarColor;
+                border-radius: 8px;
+                padding: 13px 40px;
+                left: 20%;
+                top: 1.5%;
+                z-index: 1;
+            }
+
+            &X {
+                position: fixed;
+                display: block;
+                right: 30%;
+                z-index: 2;
+                width: 3rem;
+                top: 1.3rem;
+            }
+        }
+
+        &__icons1 {
+            top: 1.3rem;
+            right: 77.4%;
+            position: fixed;
+            transition: 1s ease-in;
+            z-index: 2;
+        }
+
+        &__icons_set1 {
+            margin-right: 25%;
+            justify-content: space-between;
+        }
+
+        &__icons_set2 {
+            margin-right: 5px;
+            justify-content: space-between;
+        }
+    }
+}

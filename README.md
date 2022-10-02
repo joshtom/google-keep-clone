@@ -25,5 +25,6 @@ You may also see any lint errors in the console.
 - Javascript and Styles should be component specific i.e component/index.jsx and component/styles.module.scss
 - Use PropTypes to validate the props input
 - Write a clean code and before you send a PR make sure it's well tested and no console error
+- Fork this repository and always send a Pull Request into the dev branch
 
 
