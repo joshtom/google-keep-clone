@@ -51,7 +51,7 @@ const Card = () => {
 
   const menuCard = (
     <div className={styles.menu}>
-      <ul>
+      <ul onClick={() => {setMenuCardIsOpen(false)}}>
         <li>Add label</li>
         <li>Add drawing</li>
         <li>Add checkboxes</li>
@@ -78,7 +78,6 @@ const Card = () => {
             <MdOutlineImage className={styles.icon} />
           </div>
         </div>
-
         {editFormIsOpen ? editFormIcons : ""}
       </form>
     </div>
