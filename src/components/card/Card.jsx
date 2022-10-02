@@ -15,6 +15,7 @@ import { BiRedo } from "react-icons/bi";
 const Card = () => {
   const [menuCardIsOpen, setMenuCardIsOpen] = useState(false);
   const [editFormIsOpen, setEditFormIsOpen] = useState(false);
+  const [iconIsShown, setIconIsShown] = useState(true);
 
   const editForm = (
     <div className={styles.input_div1}>
@@ -26,7 +27,6 @@ const Card = () => {
 
   const editFormIcons = (
     <div className={styles.icon__list}>
-
       <div className={styles.icon_row}>
         <BiBellPlus className={styles.icon} />
 
@@ -38,20 +38,32 @@ const Card = () => {
 
         <RiFolderDownloadLine className={styles.icon} />
 
-        <BiDotsVerticalRounded onClick={() => setMenuCardIsOpen(true)} className={styles.icon} />
+        <BiDotsVerticalRounded
+          onClick={() => setMenuCardIsOpen(true)}
+          className={styles.icon}
+        />
 
         <BiUndo className={styles.icon} />
 
         <BiRedo className={styles.icon} />
       </div>
 
-      <button onClick={() => setEditFormIsOpen(false)}> Close </button>
+      <button
+        onClick={() => {
+          setEditFormIsOpen(false)
+            ? setIconIsShown(false)
+            : setIconIsShown(true);
+        }}> Close </button>
     </div>
   );
 
   const menuCard = (
     <div className={styles.menu}>
-      <ul onClick={() => {setMenuCardIsOpen(false)}}>
+      <ul
+        onClick={() => {
+          setMenuCardIsOpen(false);
+        }}
+      >
         <li>Add label</li>
         <li>Add drawing</li>
         <li>Add checkboxes</li>
@@ -59,31 +71,39 @@ const Card = () => {
     </div>
   );
 
+  const iconDisplay = (
+    <div className={styles.icons}>
+      <MdOutlineCheckBox className={styles.icon} />
+
+      <MdOutlineBrush className={styles.icon} />
+
+      <MdOutlineImage className={styles.icon} />
+    </div>
+  );
+
   return (
     <>
-    <div className={styles.input_card}>
-      <form className={styles.card}>
-        {editFormIsOpen ? editForm : ""}
-        <div className={styles.input_div2}>
-          <input
-            onClick={() => setEditFormIsOpen(true)}
-            type="text"
-            placeholder="Take a note..."
-          />
-          <div className={styles.icons}>
-            <MdOutlineCheckBox className={styles.icon} />
-
-            <MdOutlineBrush className={styles.icon} />
-
-            <MdOutlineImage className={styles.icon} />
+      <div className={styles.input_card}>
+        <form className={styles.card}>
+          {editFormIsOpen ? editForm : ""}
+          <div className={styles.input_div2}>
+            <input
+              onClick={() => {
+                setEditFormIsOpen(true)
+                  ? setIconIsShown(true)
+                  : setIconIsShown(false);
+              }}
+              type="text"
+              placeholder="Take a note..."
+            />
+            {iconIsShown ? iconDisplay : ""}
           </div>
-        </div>
-        {editFormIsOpen ? editFormIcons : ""}
-      </form>
-    </div>
-    {menuCardIsOpen ? menuCard : ""}
+          {editFormIsOpen ? editFormIcons : ""}
+        </form>
+      </div>
+      {menuCardIsOpen ? menuCard : ""}
     </>
-  )
+  );
 };
 
 export default Card;
