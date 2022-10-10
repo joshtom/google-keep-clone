@@ -1,0 +1,34 @@
+// Font Styling
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+$fontFamily: 'Roboto', sans-serif;
+$fontSizeSm: 15px;
+$fontSizeLg: 18px;
+
+// Light Colors
+
+$backgroundColor: #ffffff;
+$textColor: #5f6368;
+$iconColor: #5f6368;
+$searchBarColor: #f1f3f4;
+
+// Dark Colors
+
+$backgroundColorDark: #202124;
+$textColorDark: #e2e2e3;
+$iconColorDark: #98989a;
+$searchBarColorDark: #ffffff;
+
+// Breakpoints
+
+$md: 604px;
+$lg: 796px;
+
+// Mixins
+
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
