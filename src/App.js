@@ -9,7 +9,7 @@ function App() {
         <Search />
       </header>
     </div>
-  );
+  )
 }
 
 export default App;
